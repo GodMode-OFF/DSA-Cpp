@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+    int arr[10] = {2,7,11,15,27};
+    int two_sum, start = 0, end = 4;
+
+
+    cout << "Enter the number for 2sum: ";
+    cin >> two_sum;
+
+    while(start < end){
+        int sum = arr[start] + arr[end];
+        if(sum > two_sum){
+            end--;
+        }else if(sum < two_sum){
+            start++;
+        }else{
+            cout << "Numbers are: " << arr[start] << " and " << arr[end] << "\n";
+            return 0;
+        }
+    }
+
+    cout << "No pairs found that sum to " << two_sum << ".\n";
+    return 0;
+}
