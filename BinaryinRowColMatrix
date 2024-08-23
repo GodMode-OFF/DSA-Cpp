@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+
+
+int main(){
+    int arr[3][4] = {
+        {1,2,3,10},
+        {4,5,6,11},
+        {7,8,9,12}
+    };
+    int row = 0, col = 3, target;
+    cout<<"What do you want to search: ";
+    cin>>target;
+    while(row<3 && col>=0){
+        if(arr[row][col] == target){
+            cout<<"Element found at: arr["<< row <<","<< col<<"]";
+            return 0;
+        }else if(arr[row][col] < target){
+            row++;
+        }else{
+            col--;
+        }
+    }   
+    cout<<"Element not found. ";
+    return 0;
+}
