@@ -1,5 +1,3 @@
-//KMP Algo
-//still dk how to solve this
 #include<iostream>
 #include<vector>
 using namespace std;
@@ -14,8 +12,17 @@ int main(){
     while(suf < s.size()){
         if(s[suf] == s[pre]){
             lps[suf] = pre + 1;
+            suf++;
+            pre++;
+        }else{
+            if(pre == 0){
+                lps[suf] = 0;
+                suf++;
+            }else{
+                pre = lps[pre - 1];
+            }
         }
-        
+        return lps[s.size() - 1];
     }
     
     
